@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eda.dao.CouponDao">
+
+    <resultMap type="com.eda.entity.Coupon" id="CouponMap">
+        <result property="cId" column="c_id" jdbcType="INTEGER"/>
+        <result property="cType" column="c_type" jdbcType="INTEGER"/>
+        <result property="test1" column="test1" jdbcType="VARCHAR"/>
+        <result property="test2" column="test2" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="CouponMap">
+        select c_id,
+               c_type,
+               test1,
+               test2
+        from coupon
+        where c_id = #{cId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="CouponMap">
+        select
+        c_id, c_type, test1, test2
+        from coupon
+        <where>
+            <if test="cId != null">
+                and c_id = #{cId}
+            </if>
+            <if test="cType != null">
+                and c_type = #{cType}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from coupon
+        <where>
+            <if test="cId != null">
+                and c_id = #{cId}
+            </if>
+            <if test="cType != null">
+                and c_type = #{cType}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="cId" useGeneratedKeys="true">
+        insert into coupon(c_type, test1, test2)
+        values (#{cType}, #{test1}, #{test2})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="cId" useGeneratedKeys="true">
+        insert into coupon(c_type, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.cType}, #{entity.test1}, #{entity.test2})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="cId" useGeneratedKeys="true">
+        insert into coupon(c_type, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.cType}, #{entity.test1}, #{entity.test2})
+        </foreach>
+        on duplicate key update
+        c_type = values(c_type),
+        test1 = values(test1),
+        test2 = values(test2)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update coupon
+        <set>
+            <if test="cType != null">
+                c_type = #{cType},
+            </if>
+            <if test="test1 != null and test1 != ''">
+                test1 = #{test1},
+            </if>
+            <if test="test2 != null and test2 != ''">
+                test2 = #{test2},
+            </if>
+        </set>
+        where c_id = #{cId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from coupon
+        where c_id = #{cId}
+    </delete>
+
+</mapper>
+

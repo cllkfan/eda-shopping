@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eda.dao.TokenDao">
+
+    <resultMap type="com.eda.entity.Token" id="TokenMap">
+        <result property="tkId" column="tk_id" jdbcType="INTEGER"/>
+        <result property="tkStatus" column="tk_status" jdbcType="INTEGER"/>
+        <result property="tkMessage" column="tk_message" jdbcType="VARCHAR"/>
+        <result property="uId" column="u_id" jdbcType="INTEGER"/>
+        <result property="test1" column="test1" jdbcType="VARCHAR"/>
+        <result property="test2" column="test2" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="TokenMap">
+        select tk_id,
+               tk_status,
+               tk_message,
+               u_id,
+               test1,
+               test2
+        from token
+        where tk_id = #{tkId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="TokenMap">
+        select
+        tk_id, tk_status, tk_message, u_id, test1, test2
+        from token
+        <where>
+            <if test="tkId != null">
+                and tk_id = #{tkId}
+            </if>
+            <if test="tkStatus != null">
+                and tk_status = #{tkStatus}
+            </if>
+            <if test="tkMessage != null and tkMessage != ''">
+                and tk_message = #{tkMessage}
+            </if>
+            <if test="uId != null">
+                and u_id = #{uId}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from token
+        <where>
+            <if test="tkId != null">
+                and tk_id = #{tkId}
+            </if>
+            <if test="tkStatus != null">
+                and tk_status = #{tkStatus}
+            </if>
+            <if test="tkMessage != null and tkMessage != ''">
+                and tk_message = #{tkMessage}
+            </if>
+            <if test="uId != null">
+                and u_id = #{uId}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="tkId" useGeneratedKeys="true">
+        insert into token(tk_status, tk_message, u_id, test1, test2)
+        values (#{tkStatus}, #{tkMessage}, #{uId}, #{test1}, #{test2})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="tkId" useGeneratedKeys="true">
+        insert into token(tk_status, tk_message, u_id, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.tkStatus}, #{entity.tkMessage}, #{entity.uId}, #{entity.test1}, #{entity.test2})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="tkId" useGeneratedKeys="true">
+        insert into token(tk_status, tk_message, u_id, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.tkStatus}, #{entity.tkMessage}, #{entity.uId}, #{entity.test1}, #{entity.test2})
+        </foreach>
+        on duplicate key update
+        tk_status = values(tk_status),
+        tk_message = values(tk_message),
+        u_id = values(u_id),
+        test1 = values(test1),
+        test2 = values(test2)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update token
+        <set>
+            <if test="tkStatus != null">
+                tk_status = #{tkStatus},
+            </if>
+            <if test="tkMessage != null and tkMessage != ''">
+                tk_message = #{tkMessage},
+            </if>
+            <if test="uId != null">
+                u_id = #{uId},
+            </if>
+            <if test="test1 != null and test1 != ''">
+                test1 = #{test1},
+            </if>
+            <if test="test2 != null and test2 != ''">
+                test2 = #{test2},
+            </if>
+        </set>
+        where tk_id = #{tkId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from token
+        where tk_id = #{tkId}
+    </delete>
+
+</mapper>
+

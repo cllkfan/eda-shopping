@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.AdminerDao">
+
+    <resultMap type="com.eda.entity.Adminer" id="AdminerMap">
+        <result property="adId" column="ad_id" jdbcType="INTEGER"/>
+        <result property="adUsername" column="ad_username" jdbcType="VARCHAR"/>
+        <result property="adPassword" column="ad_password" jdbcType="VARCHAR"/>
+        <result property="test1" column="test1" jdbcType="VARCHAR"/>
+        <result property="test2" column="test2" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AdminerMap">
+        select
+          ad_id, ad_username, ad_password, test1, test2
+        from adminer
+        where ad_id = #{adId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AdminerMap">
+        select
+          ad_id, ad_username, ad_password, test1, test2
+        from adminer
+        <where>
+            <if test="adId != null">
+                and ad_id = #{adId}
+            </if>
+            <if test="adUsername != null and adUsername != ''">
+                and ad_username = #{adUsername}
+            </if>
+            <if test="adPassword != null and adPassword != ''">
+                and ad_password = #{adPassword}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from adminer
+        <where>
+            <if test="adId != null">
+                and ad_id = #{adId}
+            </if>
+            <if test="adUsername != null and adUsername != ''">
+                and ad_username = #{adUsername}
+            </if>
+            <if test="adPassword != null and adPassword != ''">
+                and ad_password = #{adPassword}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="adId" useGeneratedKeys="true">
+        insert into adminer(ad_username, ad_password, test1, test2)
+        values (#{adUsername}, #{adPassword}, #{test1}, #{test2})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="adId" useGeneratedKeys="true">
+        insert into adminer(ad_username, ad_password, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+        (#{entity.adUsername}, #{entity.adPassword}, #{entity.test1}, #{entity.test2})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="adId" useGeneratedKeys="true">
+        insert into adminer(ad_username, ad_password, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.adUsername}, #{entity.adPassword}, #{entity.test1}, #{entity.test2})
+        </foreach>
+        on duplicate key update
+        ad_username = values(ad_username),
+        ad_password = values(ad_password),
+        test1 = values(test1),
+        test2 = values(test2)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update adminer
+        <set>
+            <if test="adUsername != null and adUsername != ''">
+                ad_username = #{adUsername},
+            </if>
+            <if test="adPassword != null and adPassword != ''">
+                ad_password = #{adPassword},
+            </if>
+            <if test="test1 != null and test1 != ''">
+                test1 = #{test1},
+            </if>
+            <if test="test2 != null and test2 != ''">
+                test2 = #{test2},
+            </if>
+        </set>
+        where ad_id = #{adId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from adminer where ad_id = #{adId}
+    </delete>
+
+</mapper>
+

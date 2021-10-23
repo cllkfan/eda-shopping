@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eda.dao.CommitDao">
+
+    <resultMap type="com.eda.entity.Commit" id="CommitMap">
+        <result property="comId" column="com_id" jdbcType="INTEGER"/>
+        <result property="comMessage" column="com_message" jdbcType="VARCHAR"/>
+        <result property="comNick" column="com_nick" jdbcType="VARCHAR"/>
+        <result property="comRate" column="com_rate" jdbcType="INTEGER"/>
+        <result property="test1" column="test1" jdbcType="VARCHAR"/>
+        <result property="test2" column="test2" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="CommitMap">
+        select com_id,
+               com_message,
+               com_nick,
+               com_rate,
+               test1,
+               test2
+        from commit
+        where com_id = #{comId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="CommitMap">
+        select
+        com_id, com_message, com_nick, com_rate, test1, test2
+        from commit
+        <where>
+            <if test="comId != null">
+                and com_id = #{comId}
+            </if>
+            <if test="comMessage != null and comMessage != ''">
+                and com_message = #{comMessage}
+            </if>
+            <if test="comNick != null and comNick != ''">
+                and com_nick = #{comNick}
+            </if>
+            <if test="comRate != null">
+                and com_rate = #{comRate}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+        limit #{pageable.offset}, #{pageable.pageSize}
+    </select>
+
+    <!--统计总行数-->
+    <select id="count" resultType="java.lang.Long">
+        select count(1)
+        from commit
+        <where>
+            <if test="comId != null">
+                and com_id = #{comId}
+            </if>
+            <if test="comMessage != null and comMessage != ''">
+                and com_message = #{comMessage}
+            </if>
+            <if test="comNick != null and comNick != ''">
+                and com_nick = #{comNick}
+            </if>
+            <if test="comRate != null">
+                and com_rate = #{comRate}
+            </if>
+            <if test="test1 != null and test1 != ''">
+                and test1 = #{test1}
+            </if>
+            <if test="test2 != null and test2 != ''">
+                and test2 = #{test2}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="comId" useGeneratedKeys="true">
+        insert into commit(com_message, com_nick, com_rate, test1, test2)
+        values (#{comMessage}, #{comNick}, #{comRate}, #{test1}, #{test2})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="comId" useGeneratedKeys="true">
+        insert into commit(com_message, com_nick, com_rate, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.comMessage}, #{entity.comNick}, #{entity.comRate}, #{entity.test1}, #{entity.test2})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="comId" useGeneratedKeys="true">
+        insert into commit(com_message, com_nick, com_rate, test1, test2)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.comMessage}, #{entity.comNick}, #{entity.comRate}, #{entity.test1}, #{entity.test2})
+        </foreach>
+        on duplicate key update
+        com_message = values(com_message),
+        com_nick = values(com_nick),
+        com_rate = values(com_rate),
+        test1 = values(test1),
+        test2 = values(test2)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update commit
+        <set>
+            <if test="comMessage != null and comMessage != ''">
+                com_message = #{comMessage},
+            </if>
+            <if test="comNick != null and comNick != ''">
+                com_nick = #{comNick},
+            </if>
+            <if test="comRate != null">
+                com_rate = #{comRate},
+            </if>
+            <if test="test1 != null and test1 != ''">
+                test1 = #{test1},
+            </if>
+            <if test="test2 != null and test2 != ''">
+                test2 = #{test2},
+            </if>
+        </set>
+        where com_id = #{comId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from commit
+        where com_id = #{comId}
+    </delete>
+
+</mapper>
+
