@@ -80,5 +80,16 @@ public class Reciever implements Serializable {
         this.test2 = test2;
     }
 
+    public Reciever() {
+    }
+
+    public Reciever(Integer r_Id, String r_Name, String r_Address, String r_Tel, String test1, String test2) {
+        this.r_Id = r_Id;
+        this.r_Name = r_Name;
+        this.r_Address = r_Address;
+        this.r_Tel = r_Tel;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 }
 

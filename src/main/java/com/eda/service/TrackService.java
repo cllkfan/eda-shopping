@@ -12,44 +12,4 @@ import org.springframework.data.domain.PageRequest;
  */
 public interface TrackService {
 
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param tId 主键
-     * @return 实例对象
-     */
-    Track queryById(Integer tId);
-
-    /**
-     * 分页查询
-     *
-     * @param track 筛选条件
-     * @return 查询结果
-     */
-    Page<Track> queryByPage(Track track);
-
-    /**
-     * 新增数据
-     *
-     * @param track 实例对象
-     * @return 实例对象
-     */
-    Track insert(Track track);
-
-    /**
-     * 修改数据
-     *
-     * @param track 实例对象
-     * @return 实例对象
-     */
-    Track update(Track track);
-
-    /**
-     * 通过主键删除数据
-     *
-     * @param tId 主键
-     * @return 是否成功
-     */
-    boolean deleteById(Integer tId);
-
 }

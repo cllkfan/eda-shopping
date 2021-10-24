@@ -62,5 +62,15 @@ public class Paccount implements Serializable {
         this.test2 = test2;
     }
 
+    public Paccount() {
+    }
+
+    public Paccount(Integer pac_Id, Integer u_Id, String rest, String test1, String test2) {
+        this.pac_Id = pac_Id;
+        this.u_Id = u_Id;
+        this.rest = rest;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 }
 

@@ -12,44 +12,4 @@ import org.springframework.data.domain.PageRequest;
  */
 public interface ShoppingcarService {
 
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param shId 主键
-     * @return 实例对象
-     */
-    Shoppingcar queryById(Integer shId);
-
-    /**
-     * 分页查询
-     *
-     * @param shoppingcar 筛选条件
-     * @return 查询结果
-     */
-    Page<Shoppingcar> queryByPage(Shoppingcar shoppingcar);
-
-    /**
-     * 新增数据
-     *
-     * @param shoppingcar 实例对象
-     * @return 实例对象
-     */
-    Shoppingcar insert(Shoppingcar shoppingcar);
-
-    /**
-     * 修改数据
-     *
-     * @param shoppingcar 实例对象
-     * @return 实例对象
-     */
-    Shoppingcar update(Shoppingcar shoppingcar);
-
-    /**
-     * 通过主键删除数据
-     *
-     * @param shId 主键
-     * @return 是否成功
-     */
-    boolean deleteById(Integer shId);
-
 }

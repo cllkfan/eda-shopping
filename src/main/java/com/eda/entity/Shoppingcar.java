@@ -16,7 +16,7 @@ public class Shoppingcar implements Serializable {
 
     private Integer gid;
 
-    private Integer shNumber;
+    private Integer sh_Number;
 
     private Integer u_Id;
 
@@ -43,12 +43,12 @@ public class Shoppingcar implements Serializable {
         this.gid = gid;
     }
 
-    public Integer getShNumber() {
-        return shNumber;
+    public Integer getSh_Number() {
+        return sh_Number;
     }
 
-    public void setShNumber(Integer shNumber) {
-        this.shNumber = shNumber;
+    public void setSh_Number(Integer sh_Number) {
+        this.sh_Number = sh_Number;
     }
 
     public Integer getU_Id() {
@@ -83,5 +83,17 @@ public class Shoppingcar implements Serializable {
         this.test2 = test2;
     }
 
+    public Shoppingcar() {
+    }
+
+    public Shoppingcar(Integer sh_id, Integer gid, Integer sh_Number, Integer u_Id, Date sh_Ctime, String test1, String test2) {
+        this.sh_id = sh_id;
+        this.gid = gid;
+        this.sh_Number = sh_Number;
+        this.u_Id = u_Id;
+        this.sh_Ctime = sh_Ctime;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 }
 

@@ -1,5 +1,9 @@
 package com.eda.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 import java.io.Serializable;
 
@@ -9,32 +13,33 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-10-23 19:25:12
  */
+
 public class Orders implements Serializable {
     private static final long serialVersionUID = -60495679738311965L;
 
-    private Integer oId;
+    private Integer o_Id;
 
-    private String oPrice;
+    private String o_Price;
 
-    private Integer oType;
+    private Integer o_Type;
 
-    private String oPosyfee;
+    private String o_Posyfee;
 
-    private Integer oStatus;
+    private Integer o_Status;
 
-    private Date oCreatetime;
+    private Date o_Createtime;
 
-    private Date oUpdatetime;
+    private Date o_Updatetime;
 
-    private Date oPaytime;
+    private Date o_Paytime;
 
-    private Date oConsigntime;
+    private Date o_Consigntime;
 
-    private Date oEndtime;
+    private Date o_Endtime;
 
-    private Integer tId;
+    private Integer t_Id;
 
-    private Long uId;
+    private Long u_Id;
 
     private Integer gid;
 
@@ -42,124 +47,24 @@ public class Orders implements Serializable {
 
     private String test2;
 
-
-    public Integer getOId() {
-        return oId;
+    public Orders() {
     }
 
-    public void setOId(Integer oId) {
-        this.oId = oId;
-    }
-
-    public String getOPrice() {
-        return oPrice;
-    }
-
-    public void setOPrice(String oPrice) {
-        this.oPrice = oPrice;
-    }
-
-    public Integer getOType() {
-        return oType;
-    }
-
-    public void setOType(Integer oType) {
-        this.oType = oType;
-    }
-
-    public String getOPosyfee() {
-        return oPosyfee;
-    }
-
-    public void setOPosyfee(String oPosyfee) {
-        this.oPosyfee = oPosyfee;
-    }
-
-    public Integer getOStatus() {
-        return oStatus;
-    }
-
-    public void setOStatus(Integer oStatus) {
-        this.oStatus = oStatus;
-    }
-
-    public Date getOCreatetime() {
-        return oCreatetime;
-    }
-
-    public void setOCreatetime(Date oCreatetime) {
-        this.oCreatetime = oCreatetime;
-    }
-
-    public Date getOUpdatetime() {
-        return oUpdatetime;
-    }
-
-    public void setOUpdatetime(Date oUpdatetime) {
-        this.oUpdatetime = oUpdatetime;
-    }
-
-    public Date getOPaytime() {
-        return oPaytime;
-    }
-
-    public void setOPaytime(Date oPaytime) {
-        this.oPaytime = oPaytime;
-    }
-
-    public Date getOConsigntime() {
-        return oConsigntime;
-    }
-
-    public void setOConsigntime(Date oConsigntime) {
-        this.oConsigntime = oConsigntime;
-    }
-
-    public Date getOEndtime() {
-        return oEndtime;
-    }
-
-    public void setOEndtime(Date oEndtime) {
-        this.oEndtime = oEndtime;
-    }
-
-    public Integer getTId() {
-        return tId;
-    }
-
-    public void setTId(Integer tId) {
-        this.tId = tId;
-    }
-
-    public Long getUId() {
-        return uId;
-    }
-
-    public void setUId(Long uId) {
-        this.uId = uId;
-    }
-
-    public Integer getGid() {
-        return gid;
-    }
-
-    public void setGid(Integer gid) {
+    public Orders(Integer o_Id, String o_Price, Integer o_Type, String o_Posyfee, Integer o_Status, Date o_Createtime, Date o_Updatetime, Date o_Paytime, Date o_Consigntime, Date o_Endtime, Integer t_Id, Long u_Id, Integer gid, String test1, String test2) {
+        this.o_Id = o_Id;
+        this.o_Price = o_Price;
+        this.o_Type = o_Type;
+        this.o_Posyfee = o_Posyfee;
+        this.o_Status = o_Status;
+        this.o_Createtime = o_Createtime;
+        this.o_Updatetime = o_Updatetime;
+        this.o_Paytime = o_Paytime;
+        this.o_Consigntime = o_Consigntime;
+        this.o_Endtime = o_Endtime;
+        this.t_Id = t_Id;
+        this.u_Id = u_Id;
         this.gid = gid;
-    }
-
-    public String getTest1() {
-        return test1;
-    }
-
-    public void setTest1(String test1) {
         this.test1 = test1;
-    }
-
-    public String getTest2() {
-        return test2;
-    }
-
-    public void setTest2(String test2) {
         this.test2 = test2;
     }
 

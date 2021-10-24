@@ -82,5 +82,17 @@ public class Sender implements Serializable {
         this.test2 = test2;
     }
 
+    public Sender() {
+    }
+
+    public Sender(Integer s_id, Integer gid, String s_Address, String s_Phone, String s_Name, String test1, String test2) {
+        this.s_id = s_id;
+        this.gid = gid;
+        this.s_Address = s_Address;
+        this.s_Phone = s_Phone;
+        this.s_Name = s_Name;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 }
 
