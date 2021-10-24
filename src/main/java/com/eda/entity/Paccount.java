@@ -11,9 +11,9 @@ import java.io.Serializable;
 public class Paccount implements Serializable {
     private static final long serialVersionUID = 374275976463146278L;
 
-    private Integer pacId;
+    private Integer pac_Id;
 
-    private Integer uId;
+    private Integer u_Id;
 
     private String rest;
 
@@ -22,20 +22,20 @@ public class Paccount implements Serializable {
     private String test2;
 
 
-    public Integer getPacId() {
-        return pacId;
+    public Integer getPac_Id() {
+        return pac_Id;
     }
 
-    public void setPacId(Integer pacId) {
-        this.pacId = pacId;
+    public void setPac_Id(Integer pac_Id) {
+        this.pac_Id = pac_Id;
     }
 
-    public Integer getUId() {
-        return uId;
+    public Integer getU_Id() {
+        return u_Id;
     }
 
-    public void setUId(Integer uId) {
-        this.uId = uId;
+    public void setU_Id(Integer u_Id) {
+        this.u_Id = u_Id;
     }
 
     public String getRest() {

@@ -13,55 +13,55 @@ public class Reciever implements Serializable {
     /**
      * 收件编号
      */
-    private Integer rId;
+    private Integer r_Id;
     /**
      * 收件人姓名
      */
-    private String rName;
+    private String r_Name;
     /**
      * 收件人地址
      */
-    private String rAddress;
+    private String r_Address;
     /**
      * 收件人电话
      */
-    private String rTel;
+    private String r_Tel;
 
     private String test1;
 
     private String test2;
 
 
-    public Integer getRId() {
-        return rId;
+    public Integer getR_Id() {
+        return r_Id;
     }
 
-    public void setRId(Integer rId) {
-        this.rId = rId;
+    public void setR_Id(Integer r_Id) {
+        this.r_Id = r_Id;
     }
 
-    public String getRName() {
-        return rName;
+    public String getR_Name() {
+        return r_Name;
     }
 
-    public void setRName(String rName) {
-        this.rName = rName;
+    public void setR_Name(String r_Name) {
+        this.r_Name = r_Name;
     }
 
-    public String getRAddress() {
-        return rAddress;
+    public String getR_Address() {
+        return r_Address;
     }
 
-    public void setRAddress(String rAddress) {
-        this.rAddress = rAddress;
+    public void setR_Address(String r_Address) {
+        this.r_Address = r_Address;
     }
 
-    public String getRTel() {
-        return rTel;
+    public String getR_Tel() {
+        return r_Tel;
     }
 
-    public void setRTel(String rTel) {
-        this.rTel = rTel;
+    public void setR_Tel(String r_Tel) {
+        this.r_Tel = r_Tel;
     }
 
     public String getTest1() {

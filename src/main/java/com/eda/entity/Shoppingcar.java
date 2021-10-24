@@ -12,27 +12,27 @@ import java.io.Serializable;
 public class Shoppingcar implements Serializable {
     private static final long serialVersionUID = 332308484342650449L;
 
-    private Integer shId;
+    private Integer sh_id;
 
     private Integer gid;
 
     private Integer shNumber;
 
-    private Integer uId;
+    private Integer u_Id;
 
-    private Date shCtime;
+    private Date sh_Ctime;
 
     private String test1;
 
     private String test2;
 
 
-    public Integer getShId() {
-        return shId;
+    public Integer getSh_id() {
+        return sh_id;
     }
 
-    public void setShId(Integer shId) {
-        this.shId = shId;
+    public void setSh_id(Integer shid) {
+        this.sh_id = sh_id;
     }
 
     public Integer getGid() {
@@ -51,20 +51,20 @@ public class Shoppingcar implements Serializable {
         this.shNumber = shNumber;
     }
 
-    public Integer getUId() {
-        return uId;
+    public Integer getU_Id() {
+        return u_Id;
     }
 
-    public void setUId(Integer uId) {
-        this.uId = uId;
+    public void setU_Id(Integer uId) {
+        this.u_Id = u_Id;
     }
 
-    public Date getShCtime() {
-        return shCtime;
+    public Date getSh_Ctime() {
+        return sh_Ctime;
     }
 
-    public void setShCtime(Date shCtime) {
-        this.shCtime = shCtime;
+    public void setSh_Ctime(Date shCtime) {
+        this.sh_Ctime = sh_Ctime;
     }
 
     public String getTest1() {

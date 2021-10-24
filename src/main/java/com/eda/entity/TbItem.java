@@ -22,7 +22,7 @@ public class TbItem implements Serializable {
     /**
      * 商品卖点
      */
-    private String sellPoint;
+    private String sell_Point;
     /**
      * 商品价格，单位为：分
      */
@@ -77,12 +77,12 @@ public class TbItem implements Serializable {
         this.title = title;
     }
 
-    public String getSellPoint() {
-        return sellPoint;
+    public String getSell_Point() {
+        return sell_Point;
     }
 
-    public void setSellPoint(String sellPoint) {
-        this.sellPoint = sellPoint;
+    public void setSell_Point(String sellPoint) {
+        this.sell_Point = sellPoint;
     }
 
     public Long getPrice() {
