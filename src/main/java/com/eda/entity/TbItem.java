@@ -11,6 +11,26 @@ import java.io.Serializable;
  */
 public class TbItem implements Serializable {
     private static final long serialVersionUID = 360998025079750857L;
+
+    public TbItem() {
+    }
+
+    public TbItem(Long gid, String title, String sell_Point, Long price, int num, String barcode, String image, Long cid, int status, Date created, Date updated, String test1, String test2) {
+        this.gid = gid;
+        this.title = title;
+        this.sell_Point = sell_Point;
+        this.price = price;
+        this.num = num;
+        this.barcode = barcode;
+        this.image = image;
+        this.cid = cid;
+        this.status = status;
+        this.created = created;
+        this.updated = updated;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
+
     /**
      * 商品id，同时也是商品编号
      */
@@ -30,7 +50,7 @@ public class TbItem implements Serializable {
     /**
      * 库存数量
      */
-    private Integer num;
+    private int num;
     /**
      * 商品条形码
      */
@@ -46,7 +66,7 @@ public class TbItem implements Serializable {
     /**
      * 商品状态，1-正常，2-下架，3-删除
      */
-    private Integer status;
+    private int status;
     /**
      * 创建时间
      */
@@ -60,6 +80,9 @@ public class TbItem implements Serializable {
 
     private String test2;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
     public Long getGid() {
         return gid;
@@ -81,8 +104,8 @@ public class TbItem implements Serializable {
         return sell_Point;
     }
 
-    public void setSell_Point(String sellPoint) {
-        this.sell_Point = sellPoint;
+    public void setSell_Point(String sell_Point) {
+        this.sell_Point = sell_Point;
     }
 
     public Long getPrice() {
@@ -93,11 +116,11 @@ public class TbItem implements Serializable {
         this.price = price;
     }
 
-    public Integer getNum() {
+    public int getNum() {
         return num;
     }
 
-    public void setNum(Integer num) {
+    public void setNum(int num) {
         this.num = num;
     }
 
@@ -125,11 +148,11 @@ public class TbItem implements Serializable {
         this.cid = cid;
     }
 
-    public Integer getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -164,6 +187,5 @@ public class TbItem implements Serializable {
     public void setTest2(String test2) {
         this.test2 = test2;
     }
-
 }
 

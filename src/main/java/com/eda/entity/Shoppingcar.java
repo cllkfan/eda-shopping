@@ -12,59 +12,75 @@ import java.io.Serializable;
 public class Shoppingcar implements Serializable {
     private static final long serialVersionUID = 332308484342650449L;
 
-    private Integer sh_id;
+    public Shoppingcar() {
+    }
 
-    private Integer gid;
+    public Shoppingcar(int sh_id, int gid, int sh_number, int u_id, Date sh_ctime, String test1, String test2) {
+        this.sh_id = sh_id;
+        this.gid = gid;
+        this.sh_number = sh_number;
+        this.u_id = u_id;
+        this.sh_ctime = sh_ctime;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 
-    private Integer sh_Number;
+    private int sh_id;
 
-    private Integer u_Id;
+    private int gid;
 
-    private Date sh_Ctime;
+    private int sh_number;
+
+    private int u_id;
+
+    private Date sh_ctime;
 
     private String test1;
 
     private String test2;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-    public Integer getSh_id() {
+    public int getSh_id() {
         return sh_id;
     }
 
-    public void setSh_id(Integer shid) {
+    public void setSh_id(int sh_id) {
         this.sh_id = sh_id;
     }
 
-    public Integer getGid() {
+    public int getGid() {
         return gid;
     }
 
-    public void setGid(Integer gid) {
+    public void setGid(int gid) {
         this.gid = gid;
     }
 
-    public Integer getSh_Number() {
-        return sh_Number;
+    public int getSh_number() {
+        return sh_number;
     }
 
-    public void setSh_Number(Integer sh_Number) {
-        this.sh_Number = sh_Number;
+    public void setSh_number(int sh_number) {
+        this.sh_number = sh_number;
     }
 
-    public Integer getU_Id() {
-        return u_Id;
+    public int getU_id() {
+        return u_id;
     }
 
-    public void setU_Id(Integer uId) {
-        this.u_Id = u_Id;
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
     }
 
-    public Date getSh_Ctime() {
-        return sh_Ctime;
+    public Date getSh_ctime() {
+        return sh_ctime;
     }
 
-    public void setSh_Ctime(Date shCtime) {
-        this.sh_Ctime = sh_Ctime;
+    public void setSh_ctime(Date sh_ctime) {
+        this.sh_ctime = sh_ctime;
     }
 
     public String getTest1() {
@@ -80,19 +96,6 @@ public class Shoppingcar implements Serializable {
     }
 
     public void setTest2(String test2) {
-        this.test2 = test2;
-    }
-
-    public Shoppingcar() {
-    }
-
-    public Shoppingcar(Integer sh_id, Integer gid, Integer sh_Number, Integer u_Id, Date sh_Ctime, String test1, String test2) {
-        this.sh_id = sh_id;
-        this.gid = gid;
-        this.sh_Number = sh_Number;
-        this.u_Id = u_Id;
-        this.sh_Ctime = sh_Ctime;
-        this.test1 = test1;
         this.test2 = test2;
     }
 }

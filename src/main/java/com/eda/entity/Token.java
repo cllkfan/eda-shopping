@@ -11,49 +11,70 @@ import java.io.Serializable;
 public class Token implements Serializable {
     private static final long serialVersionUID = 533826142150591893L;
 
-    private Integer tkId;
+    public Token() {
+    }
 
-    private Integer tkStatus;
+    public Token(int tk_status, String tk_message, String username) {
+        this.tk_status = tk_status;
+        this.tk_message = tk_message;
+        this.username = username;
+    }
 
-    private String tkMessage;
+    public Token(int tk_id, int tk_status, String tk_message, String username, String test1, String test2) {
+        this.tk_id = tk_id;
+        this.tk_status = tk_status;
+        this.tk_message = tk_message;
+        this.username = username;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 
-    private Integer uId;
+    private int tk_id;
+
+    private int tk_status;
+
+    private String tk_message;
+
+    private String username;
 
     private String test1;
 
     private String test2;
 
-
-    public Integer getTkId() {
-        return tkId;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setTkId(Integer tkId) {
-        this.tkId = tkId;
+    public int getTk_id() {
+        return tk_id;
     }
 
-    public Integer getTkStatus() {
-        return tkStatus;
+    public void setTk_id(int tk_id) {
+        this.tk_id = tk_id;
     }
 
-    public void setTkStatus(Integer tkStatus) {
-        this.tkStatus = tkStatus;
+    public int getTk_status() {
+        return tk_status;
     }
 
-    public String getTkMessage() {
-        return tkMessage;
+    public void setTk_status(int tk_status) {
+        this.tk_status = tk_status;
     }
 
-    public void setTkMessage(String tkMessage) {
-        this.tkMessage = tkMessage;
+    public String getTk_message() {
+        return tk_message;
     }
 
-    public Integer getUId() {
-        return uId;
+    public void setTk_message(String tk_message) {
+        this.tk_message = tk_message;
     }
 
-    public void setUId(Integer uId) {
-        this.uId = uId;
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getTest1() {
@@ -71,6 +92,5 @@ public class Token implements Serializable {
     public void setTest2(String test2) {
         this.test2 = test2;
     }
-
 }
 

@@ -11,59 +11,75 @@ import java.io.Serializable;
 public class Track implements Serializable {
     private static final long serialVersionUID = -25888898186359179L;
 
-    private Integer tId;
+    public Track() {
+    }
 
-    private Integer tName;
+    public Track(int t_id, int t_name, String t_code, int s_id, int r_id, String test1, String test2) {
+        this.t_id = t_id;
+        this.t_name = t_name;
+        this.t_code = t_code;
+        this.s_id = s_id;
+        this.r_id = r_id;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 
-    private String tCode;
+    private int t_id;
 
-    private Integer sId;
+    private int t_name;
 
-    private Integer rId;
+    private String t_code;
+
+    private int s_id;
+
+    private int r_id;
 
     private String test1;
 
     private String test2;
 
-
-    public Integer getTId() {
-        return tId;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setTId(Integer tId) {
-        this.tId = tId;
+    public int getT_id() {
+        return t_id;
     }
 
-    public Integer getTName() {
-        return tName;
+    public void setT_id(int t_id) {
+        this.t_id = t_id;
     }
 
-    public void setTName(Integer tName) {
-        this.tName = tName;
+    public int getT_name() {
+        return t_name;
     }
 
-    public String getTCode() {
-        return tCode;
+    public void setT_name(int t_name) {
+        this.t_name = t_name;
     }
 
-    public void setTCode(String tCode) {
-        this.tCode = tCode;
+    public String getT_code() {
+        return t_code;
     }
 
-    public Integer getSId() {
-        return sId;
+    public void setT_code(String t_code) {
+        this.t_code = t_code;
     }
 
-    public void setSId(Integer sId) {
-        this.sId = sId;
+    public int getS_id() {
+        return s_id;
     }
 
-    public Integer getRId() {
-        return rId;
+    public void setS_id(int s_id) {
+        this.s_id = s_id;
     }
 
-    public void setRId(Integer rId) {
-        this.rId = rId;
+    public int getR_id() {
+        return r_id;
+    }
+
+    public void setR_id(int r_id) {
+        this.r_id = r_id;
     }
 
     public String getTest1() {
@@ -81,6 +97,7 @@ public class Track implements Serializable {
     public void setTest2(String test2) {
         this.test2 = test2;
     }
-
 }
+
+
 

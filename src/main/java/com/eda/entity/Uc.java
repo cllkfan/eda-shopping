@@ -11,29 +11,53 @@ import java.io.Serializable;
 public class Uc implements Serializable {
     private static final long serialVersionUID = 871662294492747434L;
 
-    private Integer uId;
+    public Uc() {
+    }
 
-    private Integer cId;
+    public Uc(int uc_id, int u_id, int c_id, String test1, String test2) {
+        this.uc_id = uc_id;
+        this.u_id = u_id;
+        this.c_id = c_id;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
+
+    private int uc_id;
+
+    private int u_id;
+
+    private int c_id;
 
     private String test1;
 
     private String test2;
 
-
-    public Integer getUId() {
-        return uId;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setUId(Integer uId) {
-        this.uId = uId;
+    public int getUc_id() {
+        return uc_id;
     }
 
-    public Integer getCId() {
-        return cId;
+    public void setUc_id(int uc_id) {
+        this.uc_id = uc_id;
     }
 
-    public void setCId(Integer cId) {
-        this.cId = cId;
+    public int getU_id() {
+        return u_id;
+    }
+
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
+    }
+
+    public int getC_id() {
+        return c_id;
+    }
+
+    public void setC_id(int c_id) {
+        this.c_id = c_id;
     }
 
     public String getTest1() {
@@ -51,6 +75,5 @@ public class Uc implements Serializable {
     public void setTest2(String test2) {
         this.test2 = test2;
     }
-
 }
 

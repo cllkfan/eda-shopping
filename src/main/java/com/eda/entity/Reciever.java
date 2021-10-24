@@ -10,10 +10,23 @@ import java.io.Serializable;
  */
 public class Reciever implements Serializable {
     private static final long serialVersionUID = -59441232262390574L;
+
+    public Reciever() {
+    }
+
+    public Reciever(int r_Id, String r_Name, String r_Address, String r_Tel, String test1, String test2) {
+        this.r_Id = r_Id;
+        this.r_Name = r_Name;
+        this.r_Address = r_Address;
+        this.r_Tel = r_Tel;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
+
     /**
      * 收件编号
      */
-    private Integer r_Id;
+    private int r_Id;
     /**
      * 收件人姓名
      */
@@ -31,12 +44,15 @@ public class Reciever implements Serializable {
 
     private String test2;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-    public Integer getR_Id() {
+    public int getR_Id() {
         return r_Id;
     }
 
-    public void setR_Id(Integer r_Id) {
+    public void setR_Id(int r_Id) {
         this.r_Id = r_Id;
     }
 
@@ -77,18 +93,6 @@ public class Reciever implements Serializable {
     }
 
     public void setTest2(String test2) {
-        this.test2 = test2;
-    }
-
-    public Reciever() {
-    }
-
-    public Reciever(Integer r_Id, String r_Name, String r_Address, String r_Tel, String test1, String test2) {
-        this.r_Id = r_Id;
-        this.r_Name = r_Name;
-        this.r_Address = r_Address;
-        this.r_Tel = r_Tel;
-        this.test1 = test1;
         this.test2 = test2;
     }
 }

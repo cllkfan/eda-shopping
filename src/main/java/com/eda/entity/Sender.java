@@ -11,9 +11,22 @@ import java.io.Serializable;
 public class Sender implements Serializable {
     private static final long serialVersionUID = 652781844002511708L;
 
-    private Integer s_id;
+    public Sender() {
+    }
 
-    private Integer gid;
+    public Sender(int s_id, int gid, String s_Address, String s_Phone, String s_Name, String test1, String test2) {
+        this.s_id = s_id;
+        this.gid = gid;
+        this.s_Address = s_Address;
+        this.s_Phone = s_Phone;
+        this.s_Name = s_Name;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
+
+    private int s_id;
+
+    private int gid;
 
     private String s_Address;
 
@@ -25,20 +38,23 @@ public class Sender implements Serializable {
 
     private String test2;
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
 
-    public Integer getS_id() {
+    public int getS_id() {
         return s_id;
     }
 
-    public void setS_id(Integer s_id) {
+    public void setS_id(int s_id) {
         this.s_id = s_id;
     }
 
-    public Integer getGid() {
+    public int getGid() {
         return gid;
     }
 
-    public void setGid(Integer gid) {
+    public void setGid(int gid) {
         this.gid = gid;
     }
 
@@ -54,7 +70,7 @@ public class Sender implements Serializable {
         return s_Phone;
     }
 
-    public void setS_Phone(String sPhone) {
+    public void setS_Phone(String s_Phone) {
         this.s_Phone = s_Phone;
     }
 
@@ -79,19 +95,6 @@ public class Sender implements Serializable {
     }
 
     public void setTest2(String test2) {
-        this.test2 = test2;
-    }
-
-    public Sender() {
-    }
-
-    public Sender(Integer s_id, Integer gid, String s_Address, String s_Phone, String s_Name, String test1, String test2) {
-        this.s_id = s_id;
-        this.gid = gid;
-        this.s_Address = s_Address;
-        this.s_Phone = s_Phone;
-        this.s_Name = s_Name;
-        this.test1 = test1;
         this.test2 = test2;
     }
 }

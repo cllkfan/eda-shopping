@@ -11,38 +11,52 @@ import java.io.Serializable;
 public class Gimg implements Serializable {
     private static final long serialVersionUID = -28196120355792091L;
 
-    private Integer gimgId;
+    public Gimg() {
+    }
 
-    private String gimgName;
+    public Gimg(int gimg_id, String gimg_name, int gid, String test1, String test2) {
+        this.gimg_id = gimg_id;
+        this.gimg_name = gimg_name;
+        this.gid = gid;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 
-    private Integer gid;
+    private int gimg_id;
+
+    private String gimg_name;
+
+    private int gid;
 
     private String test1;
 
     private String test2;
 
-
-    public Integer getGimgId() {
-        return gimgId;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setGimgId(Integer gimgId) {
-        this.gimgId = gimgId;
+    public int getGimg_id() {
+        return gimg_id;
     }
 
-    public String getGimgName() {
-        return gimgName;
+    public void setGimg_id(int gimg_id) {
+        this.gimg_id = gimg_id;
     }
 
-    public void setGimgName(String gimgName) {
-        this.gimgName = gimgName;
+    public String getGimg_name() {
+        return gimg_name;
     }
 
-    public Integer getGid() {
+    public void setGimg_name(String gimg_name) {
+        this.gimg_name = gimg_name;
+    }
+
+    public int getGid() {
         return gid;
     }
 
-    public void setGid(Integer gid) {
+    public void setGid(int gid) {
         this.gid = gid;
     }
 
@@ -61,6 +75,5 @@ public class Gimg implements Serializable {
     public void setTest2(String test2) {
         this.test2 = test2;
     }
-
 }
 

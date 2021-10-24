@@ -11,49 +11,64 @@ import java.io.Serializable;
 public class Commit implements Serializable {
     private static final long serialVersionUID = -91931955149413472L;
 
-    private Integer comId;
+    public Commit() {
+    }
 
-    private String comMessage;
+    public Commit(int com_id, String com_message, String com_nick, int com_rate, String test1, String test2) {
+        this.com_id = com_id;
+        this.com_message = com_message;
+        this.com_nick = com_nick;
+        this.com_rate = com_rate;
+        this.test1 = test1;
+        this.test2 = test2;
+    }
 
-    private String comNick;
+    private int com_id;
 
-    private Integer comRate;
+    private String com_message;
+
+    private String com_nick;
+
+    private int com_rate;
 
     private String test1;
 
     private String test2;
 
-
-    public Integer getComId() {
-        return comId;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
-    public void setComId(Integer comId) {
-        this.comId = comId;
+    public int getCom_id() {
+        return com_id;
     }
 
-    public String getComMessage() {
-        return comMessage;
+    public void setCom_id(int com_id) {
+        this.com_id = com_id;
     }
 
-    public void setComMessage(String comMessage) {
-        this.comMessage = comMessage;
+    public String getCom_message() {
+        return com_message;
     }
 
-    public String getComNick() {
-        return comNick;
+    public void setCom_message(String com_message) {
+        this.com_message = com_message;
     }
 
-    public void setComNick(String comNick) {
-        this.comNick = comNick;
+    public String getCom_nick() {
+        return com_nick;
     }
 
-    public Integer getComRate() {
-        return comRate;
+    public void setCom_nick(String com_nick) {
+        this.com_nick = com_nick;
     }
 
-    public void setComRate(Integer comRate) {
-        this.comRate = comRate;
+    public int getCom_rate() {
+        return com_rate;
+    }
+
+    public void setCom_rate(int com_rate) {
+        this.com_rate = com_rate;
     }
 
     public String getTest1() {
