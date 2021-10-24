@@ -1,12 +1,10 @@
 package com.eda.service.impl;
 
 import com.eda.entity.Classify;
-import com.eda.mapper.ClassifyMapper;
 import com.eda.service.ClassifyService;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
 

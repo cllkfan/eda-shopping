@@ -12,62 +12,39 @@ import java.io.Serializable;
 public class Users implements Serializable {
     private static final long serialVersionUID = 506497009821533913L;
 
-    public Users(int u_id) {
-        this.u_id = u_id;
-    }
-
-    public Users(int u_id, String username, String pwd, String u_name, String u_tel, String u_email, Integer v_id, Date u_date, Date u_birth, String u_sex, int u_status, String test1, String test2) {
-        this.u_id = u_id;
-        this.username = username;
-        this.pwd = pwd;
-        this.u_name = u_name;
-        this.u_tel = u_tel;
-        this.u_email = u_email;
-        this.v_id = v_id;
-        this.u_date = u_date;
-        this.u_birth = u_birth;
-        this.u_sex = u_sex;
-        this.u_status = u_status;
-        this.test1 = test1;
-        this.test2 = test2;
-    }
-
-    private int u_id;
+    private Integer uId;
 
     private String username;
 
     private String pwd;
 
-    private String u_name;
+    private String uName;
 
-    private String u_tel;
+    private String uTel;
 
-    private String u_email;
+    private String uEmail;
 
-    private Integer v_id;
+    private Integer vId;
 
-    private Date u_date;
+    private Date uDate;
 
-    private Date u_birth;
+    private Date uBirth;
 
-    private String u_sex;
+    private String uSex;
 
-    private int u_status;
+    private Integer uStatus;
 
     private String test1;
 
     private String test2;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
+
+    public Integer getUId() {
+        return uId;
     }
 
-    public int getU_id() {
-        return u_id;
-    }
-
-    public void setU_id(int u_id) {
-        this.u_id = u_id;
+    public void setUId(Integer uId) {
+        this.uId = uId;
     }
 
     public String getUsername() {
@@ -86,68 +63,68 @@ public class Users implements Serializable {
         this.pwd = pwd;
     }
 
-    public String getU_name() {
-        return u_name;
+    public String getUName() {
+        return uName;
     }
 
-    public void setU_name(String u_name) {
-        this.u_name = u_name;
+    public void setUName(String uName) {
+        this.uName = uName;
     }
 
-    public String getU_tel() {
-        return u_tel;
+    public String getUTel() {
+        return uTel;
     }
 
-    public void setU_tel(String u_tel) {
-        this.u_tel = u_tel;
+    public void setUTel(String uTel) {
+        this.uTel = uTel;
     }
 
-    public String getU_email() {
-        return u_email;
+    public String getUEmail() {
+        return uEmail;
     }
 
-    public void setU_email(String u_email) {
-        this.u_email = u_email;
+    public void setUEmail(String uEmail) {
+        this.uEmail = uEmail;
     }
 
-    public Integer getV_id() {
-        return v_id;
+    public Integer getVId() {
+        return vId;
     }
 
-    public void setV_id(Integer v_id) {
-        this.v_id = v_id;
+    public void setVId(Integer vId) {
+        this.vId = vId;
     }
 
-    public Date getU_date() {
-        return u_date;
+    public Date getUDate() {
+        return uDate;
     }
 
-    public void setU_date(Date u_date) {
-        this.u_date = u_date;
+    public void setUDate(Date uDate) {
+        this.uDate = uDate;
     }
 
-    public Date getU_birth() {
-        return u_birth;
+    public Date getUBirth() {
+        return uBirth;
     }
 
-    public void setU_birth(Date u_birth) {
-        this.u_birth = u_birth;
+    public void setUBirth(Date uBirth) {
+        this.uBirth = uBirth;
     }
 
-    public String getU_sex() {
-        return u_sex;
+    public String getUSex() {
+        return uSex;
     }
 
-    public void setU_sex(String u_sex) {
-        this.u_sex = u_sex;
+    public void setUSex(String uSex) {
+        this.uSex = uSex;
     }
 
-    public int getU_status() {
-        return u_status;
+    public Integer getUStatus() {
+        return uStatus;
     }
 
-    public void setU_status(int u_status) {
-        this.u_status = u_status;
+    public void setUStatus(Integer uStatus) {
+        this.uStatus = uStatus;
     }
 
     public String getTest1() {
@@ -165,5 +142,6 @@ public class Users implements Serializable {
     public void setTest2(String test2) {
         this.test2 = test2;
     }
+
 }
 

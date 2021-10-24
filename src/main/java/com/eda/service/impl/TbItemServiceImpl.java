@@ -1,12 +1,10 @@
 package com.eda.service.impl;
 
 import com.eda.entity.TbItem;
-import com.eda.mapper.TbItemMapper;
 import com.eda.service.TbItemService;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 
 import javax.annotation.Resource;
 
